@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <script>
+        // 1q
+        /*function greet(name){
+            
+            if(!name){
+                console.log('hi! there');
+            }else{
+                console.log(`Hello! ${name}`);
+            }
+        <script>
+            // 1q (example greet) - left commented out
+            /*
+            function greet(name){
+                if(!name){
+                    console.log('hi! there');
+                } else {
+                    console.log(`Hello! ${name}`);
+                }
+            }
+            greet();
+            */
+
+            // 2q - corrected temperature conversion functions
+            function convertToFahrenheit(celsius){
+                const fahrenheit = (celsius * 9/5) + 32;
+                return fahrenheit;
+            }
+
+            function convertToCelsius(fahrenheit){
+                const celsius = (fahrenheit - 32) * 5/9;
+                return celsius;
+            }
+
+            // convertTemperature: takes a numeric value and a unit string ('c' or 'f')
+            // returns the converted numeric value (or null on invalid input)
+            function convertTemperature(degrees, unit){
+                const value = Number(degrees);
+                if (Number.isNaN(value)){
+                    console.error('degrees must be a number');
+                    return null;
+                }
+                const u = (unit || '').toString().trim().toLowerCase();
+
+                if (u === 'c'){
+                    const out = convertToFahrenheit(value);
+                    console.log(`${value}°C => ${out}°F`);
+                    return out;
+                } else if (u === 'f'){
+                    const out = convertToCelsius(value);
+                    console.log(`${value}°F => ${out}°C`);
+                    return out;
+                } else {
+                    console.error("Invalid unit. Use 'c' for Celsius or 'f' for Fahrenheit.");
+                    return null;
+                }
+            }
+
+            // Examples to verify behavior - open devtools console to see results
+            convertTemperature(20, 'c'); // expected ~68°F
+            convertTemperature(68, 'f'); // expected ~20°C
+
+        </script>

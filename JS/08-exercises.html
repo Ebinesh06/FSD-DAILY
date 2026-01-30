@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <script>
+        //1
+        const cart1= {
+            name : 'basketball',
+            price: 20
+        };
+
+        // console.log(cart1);
+        // cart1.price+=500;
+        // console.log(cart1.price);
+        // cart1['delivery-time']='3 days';
+        // console.log(cart1['delivery-time']);
+        const cart2 =  {
+            name : 'football',
+            price: 2000
+        };
+
+        function comparePrice(cart1,cart2){
+            if(cart1.price>cart2.price){
+                return cart2;
+            }else if(cart1.price<cart2.price){
+                return cart1;
+            }else{
+                return 'equal price';
+            }
+        }
+        console.log(comparePrice(cart1,cart2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changing a text </title>
+</head>
+<body>
+    <h1>click the button to see the hidden text</h1>
+    <button onclick="document.getElementById('buttoon').innerHTML='Hello this is javascript'" >Click me !</button>
+    <p id="buttoon"></p>
+    <br><br><hr>
+
+
+
+    <h1>Click to see the bulb change colour</h1>
+    <button onclick="document.getElementById('bulb').src='https://www.w3schools.com/js/pic_bulbon.gif'">Click me to turn on the light.</button>
+    <img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="no image found" id="bulb">
+    <button onclick="document.getElementById('bulb').src='https://www.w3schools.com/js/pic_bulboff.gif'">Click me to turn off the light.</button>
+    <br><br><hr>
+
+
+    <h1>Click me to change the fontsize</h1>
+    <button onclick="document.getElementById('textsize').style.fontSize='40px'">Click me to change the fontsize</button>
+    <p id="textsize">This is a simple text</p>
+</body>
+</html>

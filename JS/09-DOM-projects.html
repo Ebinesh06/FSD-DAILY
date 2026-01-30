@@ -4,42 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Projects</title>
+    <title>DOM PROJECTS</title>
 </head>
 
 <body>
-    <p>YouTube Subscribe Button</p>
-    <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+    <p>
+        YouTube subscrcibe button
+    </p>
+    <button onclick="
+    Subscribe();
+    " class="js-button">Subscribe</button>
 
     <p>Amazon Shipping Calculator</p>
-    <input type="text" name="" id="" placeholder="cost of order" class="js-costInput"><button onclick="calculateTotal();">Calculate</button>
+    <input type="text" placeholder="Cost of order" class="js-cost-input" onkeydown="handleCostKeyDown(event);">
+    <button onclick="calculateTotal(event);
+    ">Calculate</button>
     <p class="js-total-cost"></p>
-
     <script>
-        function subscribe() {
-            const buttonElem = document.querySelector('.js-subscribe-button');
 
-            if (buttonElem.innerText === 'subscribe') {
-                buttonElem.innerHTML = 'subscribed';
-            } else {
-                buttonElem.innerHTML = 'subscribe';
+        
+
+        function handleCostKeyDown(event) {
+            console.log(event.key);
+            if (event.key === 'Enter') {
+                calculateTotal();
             }
-
         }
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
 
-        function calculateTotal(){
-            const inputElement = document.querySelector('.js-costInput');
-            let cost = inputElement.value;
-            if(cost < 40){
+            if (cost < 40) {
                 cost = cost + 10;
             }
-            document.querySelector('.js-total-cost').innerHTML = `Total cost : $${cost}`;
+            document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
         }
-
-
-
-
-
+        function Subscribe() {
+            const buttonElem = document.querySelector('.js-button');
+            if (buttonElem.innerText === 'Subscribe') {
+                buttonElem.innerHTML = 'Subscribed';
+            } else {
+                buttonElem.innerHTML = 'Subscribe';
+            }
+        }
     </script>
 </body>
 
